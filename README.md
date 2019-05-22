@@ -144,7 +144,7 @@ There are many text editors out there. We will be using an editor called VIM (sh
 - **Bonus**: run the command `echo "Hello" >-toughFile` and then try to delete the file created by that command. There are at least two ways to do this.
 
 
-### The Art of Redirection
+******### The Art of Redirection
 
 Remember in the previous lab when you typed the command `echo "Hello Terminal" >myfile.txt`? That 'greater than' sign is actually a special character in bash used for redirecting output to a file. There are several of these operators for redirecting output and input. The main redirection operators to be aware of are as follows:
 
@@ -159,7 +159,7 @@ Remember in the previous lab when you typed the command `echo "Hello Terminal" >
 - Use the `find` command to search for all files on your machine with "core' in the name. You can do that with `find / -name core`.
 - That's a lot of "Permission denied" errors, and they make it hard to see the useful output from that command. Fortunately that's where output redirection becomes helpful: Those errors all go to STDERR, while the output we want is going to STDOUT. Use the commands above to redirect STDERR to `/dev/null`, effectively throwing away the output from STDERR.
 - That's a little better. We want to search for specific core files in this output, so let's redirect STDOUT to a file called `corefiles.log`.
-- Next, use `grep` to search for any lines that contain the string 'lib'. We want the search to be case insensitive so we'll use the `-i` flag like so: `grep -i lib corefiles.log` (**note**: your file may have very few lines in it if your computer is rather new and has not had many programs installed yet. It may seem silly to use grep to search for a particular line in a file with only two lines, but when you're searching for an error that occurred only once in over 10000 lines of debugging output you will want to know this tool well.)
+- Next, use `grep` to search for any lines that contain the string 'lib'. We want the search to be case insensitive so we'll use the `-i` flag like so:` (**note**: your file may have very few lines in it if your computer is rather new and has not had many programs installed yet. It may seem silly to use grep to search for a particular line in a file with only two lines, but when you're searching for an error that occurred only once in over 10000 lines of debugging output you will want to know this tool well.)
 - Great, but there's a quicker way to do this without creating a file and running two separate commands. Try using the `|` (pipe) character to redirect the output from `find` to the input for `grep`. Don't forget to throw out the STDERR output; we don't need grep to search through that since we already know it won't contain the files we're looking for.
 
 #### Backgrounding
